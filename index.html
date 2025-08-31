@@ -14,21 +14,8 @@
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#a9745f" />
 
-  <!-- Open Graph (Facebook & WhatsApp) -->
-  <meta property="og:title" content="Bake Eat Easy — Homemade Bakes Worth the Hype" />
-  <meta property="og:description" content="Small-batch desserts crafted with care. Order early before we sell out!" />
-  <meta property="og:image" content="https://yourdomain.com/images/logo.png" />
-  <meta property="og:url" content="https://yourdomain.com" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Bake Eat Easy — Homemade Bakes Worth the Hype" />
-  <meta name="twitter:description" content="Small-batch desserts crafted with care. Order early before we sell out!" />
-  <meta name="twitter:image" content="https://yourdomain.com/images/logo.png" />
-
   <!-- Favicon -->
-  <link rel="icon" href="/images/logo.png" type="image/png" />
+  <link rel="icon" href="logo.png" type="image/png" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
@@ -45,23 +32,32 @@
       min-height: 100vh;
     }
 
+    /* HEADER */
     header {
       background-color: #a9745f;
-      padding: 0.7rem 2rem;
+      padding: 0.7rem 1.5rem;
       color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      flex-wrap: wrap;
     }
 
     .logo img {
-      height: 100px;
+      height: 70px;
       width: auto;
+      max-width: 100%;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     nav a {
-      margin: 0 1rem;
+      margin: 0.5rem 0.8rem;
       color: white;
       text-decoration: none;
       font-weight: bold;
@@ -72,46 +68,43 @@
       color: #ffd8c2;
     }
 
+    /* HERO */
     .hero {
       background: linear-gradient(to right, #f2d0c4, #f9e1d1);
-      padding: 4rem 2rem;
+      padding: 3rem 1.5rem;
       text-align: center;
       border-bottom: 3px dashed #d6a28c;
     }
 
     .hero h1 {
-      font-size: 2.8rem;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
       font-family: 'Playfair Display', serif;
       margin-bottom: 1rem;
       color: #3e2c23;
     }
 
     .hero p {
-      font-size: 1.3rem;
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
       max-width: 700px;
       margin: 0 auto;
       color: #5d4433;
+      line-height: 1.6;
     }
 
-    .photos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      max-width: 1000px;
-      margin: 3rem auto;
+    /* SINGLE PHOTO */
+    .photo {
+      max-width: 800px;
+      margin: 2rem auto;
       padding: 0 1rem;
     }
 
     .photo-card {
       background-color: #fff;
-      padding: 1rem;
+      padding: 1.2rem;
       border-radius: 15px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       transition: transform 0.3s, box-shadow 0.3s;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      text-align: center;
     }
 
     .photo-card:hover {
@@ -124,9 +117,10 @@
       font-size: 1rem;
     }
 
+    /* CTA */
     .cta {
       text-align: center;
-      padding: 2rem 2rem;
+      padding: 2.5rem 1.5rem;
       background-color: #f8ebe1;
     }
 
@@ -139,12 +133,14 @@
       font-weight: bold;
       font-size: 1.1rem;
       transition: background-color 0.3s;
+      display: inline-block;
     }
 
     a.button:hover {
       background-color: #5d4433;
     }
 
+    /* FOOTER */
     footer {
       background-color: #a9745f;
       color: white;
@@ -154,18 +150,33 @@
       font-size: 0.95rem;
     }
 
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 2rem;
+    /* MOBILE TWEAKS */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
       }
 
-      nav a {
-        margin: 0 0.5rem;
-        font-size: 0.9rem;
+      nav {
+        margin-top: 0.5rem;
       }
 
       .logo img {
-        height: 40px;
+        height: 55px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo img {
+        height: 45px;
+      }
+
+      .hero {
+        padding: 2rem 1rem;
+      }
+
+      .cta {
+        padding: 2rem 1rem;
       }
     }
   </style>
@@ -192,15 +203,9 @@
     <p>Limited weekend drops of signature bakes, made with care and creativity. Order early—when they’re gone, they’re gone.</p>
   </section>
 
-  <section class="photos">
+  <section class="photo">
     <div class="photo-card">
-      <p>[ Photo Placeholder: Basque Cheesecake ]</p>
-    </div>
-    <div class="photo-card">
-      <p>[ Photo Placeholder: Chocolate Chip Cookies ]</p>
-    </div>
-    <div class="photo-card">
-      <p>[ Photo Placeholder: Carrot Cake ]</p>
+      <p>[ Photo Placeholder: Signature Dessert ]</p>
     </div>
   </section>
 
